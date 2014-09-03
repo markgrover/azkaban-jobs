@@ -1,2 +1,3 @@
-type=command
-command=sleep 5
+type=hive
+hive.script=${scripts}/stats.hql
+user.to.proxy=hive

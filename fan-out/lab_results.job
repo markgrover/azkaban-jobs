@@ -1,4 +1,5 @@
-type=command
-command=sleep 5
+type=hive
+hive.script=${scripts}/labs.hql
+user.to.proxy=hive
 
 dependencies=preliminary_statistics
