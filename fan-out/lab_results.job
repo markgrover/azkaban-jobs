@@ -1,0 +1,4 @@
+type=command
+command=sleep 5
+
+dependencies=preliminary_statistics
