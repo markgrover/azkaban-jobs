@@ -7,6 +7,10 @@ fi
 
 if [ -n "${validate_errors}" ] && [ "${validate_errors}" == "true" ]; then 
   echo "Errors found"
+  java  -Xms64M -Xmx256M -Dinput.dir=${input.base.dir}/dataset com.hadooparchitecturebook.MoveOutputToErrorsAction \
+  ${input.base.dir} ${errors.base.dir}
 else
   echo "No errors found"
+  java -Xms64M -Xmx256M -Dinput.dir=${input.base.dir}/dataset com.hadooparchitecturebook.ProcessDataRunner \
+  wordcount /user/hive/warehouse/table1/data.txt /tmp/wordcount
 fi
