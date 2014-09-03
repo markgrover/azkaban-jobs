@@ -1,4 +1,4 @@
 type=command
-command=sqoop export --connect jdbc:mysql://mgrover-haa-2.vpc.cloudera.com/azkaban --username azkaban --password password --table schedules --export-dir=hdfs://mgrover-haa-1.vpc.cloudera.com/tmp/sqoop_export
+command=sqoop export --connect jdbc:mysql://mgrover-haa-2.vpc.cloudera.com/azkaban --username azkaban --password password --table schedules --export-dir=/tmp/sqoop_export
 
 dependencies=hive_populate
