@@ -1,4 +1,4 @@
 type=command
-command=sqoop export --connect jdbc:mysql://mgrover-haa-2.vpc.cloudera.com/azkaban --username azkaban --password password --table schedules --export-dir=/tmp/sqoop_export
+command=sqoop export --connect jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = orahost)(PORT = 1521)))(SDU = 5844)(CONNECT_DATA = (ORACLE_SID = oracle))) --username ${my_user} --password ${my_password} --table schedules --export-dir=/tmp/sqoop_export
 
 dependencies=hive_populate
