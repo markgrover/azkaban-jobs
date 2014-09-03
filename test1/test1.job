@@ -1,0 +1,3 @@
+# foo.job
+type=command
+command=bash test1.sh
