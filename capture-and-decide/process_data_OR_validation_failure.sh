@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
   # ${JOB_PROP_FILE} is always defined and exist so this check should always pass
 if [ -n ${JOB_PROP_FILE} ] && [ -e ${JOB_PROP_FILE} ]; then
   # variable value can also be parsed by the following statement. It returns the value part of validate_erros=value
