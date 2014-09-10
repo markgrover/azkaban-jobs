@@ -1,8 +1,10 @@
 #!/bin/bash
-  # ${JOB_PROP_FILE} is always defined and exist so this check should always pass
+  # ${JOB_PROP_FILE} is always defined and exists, so this check should always pass
 if [ -n ${JOB_PROP_FILE} ] && [ -e ${JOB_PROP_FILE} ]; then
   # variable value can also be parsed by the following statement. It returns the value part of validate_erros=value
+  # This can however only be used when parameters have valid bash variable names (a-z,A-Z,0-9,_), no dots allowed.
   #. ${JOB_{PROP_FILE}
+  # Since our parameters have dots in the name, we use grep -PO instead
   INPUT_BASE_DIR=$(grep -Po "(?<=^input.base.dir=).*" $JOB_PROP_FILE)
   VALIDATE_ERRORS=$(grep -Po "(?<=^validate_errors=).*" $JOB_PROP_FILE)
   ERRORS_BASE_DIR=$(grep -Po "(?<=^errors.base.dir=).*" $JOB_PROP_FILE)
