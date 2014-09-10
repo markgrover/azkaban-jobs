@@ -26,5 +26,5 @@ if [ -n "${VALIDATE_ERRORS}" ] && [ "${VALIDATE_ERRORS}" == "true" ]; then
 else
   echo "No errors found"
   java -Xms64M -Xmx256M -Dinput.dir=${INPUT_BASE_DIR}/dataset com.hadooparchitecturebook.ProcessDataRunner \
-  wordcount /user/hive/warehouse/table1/data.txt /tmp/wordcount
+  -Dinput.dir=${INPUT_BASE_DIR}/dataset
 fi
